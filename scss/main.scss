@@ -1,0 +1,197 @@
+/* Обнуление */
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@700&family=Manrope:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 100%;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/* Обнуление */
+
+:root {
+  --black: #000;
+  --white: #fff;
+}
+body {
+  font-family: "Manrope", sans-serif;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*header*/
+.header {
+  position: fixed;
+  min-width: 100vw;
+  margin: 0px 0px 30px 0px;
+}
+.navbar {
+  // .navbar__row
+  padding: 34px;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // .navbar__logo
+
+  &__logo {
+    a {
+      color: var(--black);
+      font-family: "Azeret Mono", monospace;
+      font-weight: 700;
+      font-size: 20px;
+      font-size: 20px;
+      letter-spacing: -3.6px;
+      margin-right: 88px;
+    }
+  }
+
+  // .navbar__items
+
+  &__items {
+    margin-right: auto;
+    display: flex;
+    li {
+      margin-right: 50px;
+
+      a {
+        text-decoration: none;
+        color: var(--black);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+  }
+
+  // .navbar__contacts
+
+  &__contacts {
+    display: flex;
+    gap: 15px;
+  }
+}
+.contacts {
+  // .contacts__telegram
+
+  &__telegram {
+  }
+
+  // .contacts__instagram
+
+  &__instagram {
+  }
+}
+
+/*header*/
+
+/*main*/
+.main {
+  margin: 100px 0px 0px 0px;
+  flex: 1 1 auto;
+}
+/*main*/
+
+/*services*/
+
+/*services*/
+
+/*agency*/
+
+/*agency*/
+
+/*people*/
+
+/*people*/
