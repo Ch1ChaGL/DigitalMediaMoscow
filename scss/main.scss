@@ -99,7 +99,7 @@ body {
   font-family: "Manrope", sans-serif;
 }
 .container {
-  max-width: 1100px;
+  max-width: 800px;
   margin: 0 auto;
 }
 .wrapper {
@@ -111,21 +111,21 @@ body {
 /*header*/
 .header {
   position: fixed;
-  min-width: 100vw;
+  min-width: 100%;
   margin: 0px 0px 30px 0px;
 }
-.navbar {
-  // .navbar__row
-  padding: 34px;
-  &__row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 
-  // .navbar__logo
-
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--white);
+  border-bottom: 2px solid #edf3f9;
   &__logo {
+    max-width: 200px;
+    width: 100%;
+    margin: 0px 40px 0px 0px;
     a {
       color: var(--black);
       font-family: "Azeret Mono", monospace;
@@ -133,18 +133,15 @@ body {
       font-size: 20px;
       font-size: 20px;
       letter-spacing: -3.6px;
-      margin-right: 88px;
     }
   }
-
-  // .navbar__items
-
-  &__items {
-    margin-right: auto;
+  &__list {
+    width: 50%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     li {
-      margin-right: 50px;
-
+      margin: 0px 25px 0px 0px;
       a {
         text-decoration: none;
         color: var(--black);
@@ -155,24 +152,103 @@ body {
       }
     }
   }
-
-  // .navbar__contacts
-
+  &__body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
   &__contacts {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+  }
+  &__burger {
+    display: none;
+    position: relative;
+    z-index: 999;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 30px;
+    span {
+      height: 2px;
+      width: 100%;
+      transform: scale(1);
+      background-color: var(--black);
+    }
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: var(--black);
+      transition: all 0.3s ease 0s;
+    }
+    &::after {
+      bottom: 0;
+    }
+    &::before {
+      top: 0;
+    }
+    &.active {
+      span {
+        transform: scale(0);
+      }
+      &::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0, -50%);
+      }
+      &::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0, 50%);
+      }
+    }
   }
 }
-.contacts {
-  // .contacts__telegram
 
-  &__telegram {
+@media (max-width: 600px) {
+  .header__menu .menu__list .menu__link {
+    font-size: 30px;
   }
+  .menu {
+    justify-content: space-between;
+    &__img {
+      margin-right: auto; /* Отодвигаем первый элемент влево */
+    }
+    &__burger {
+      display: flex;
+    }
+    &__body {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 999;
 
-  // .contacts__instagram
-
-  &__instagram {
+      padding: 50px 40px;
+      background-color: var(--white);
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      li {
+        margin-bottom: 40px;
+      }
+    }
   }
+}
+.hidden {
+  display: none;
+}
+#menu__link-main.hidden {
+  display: none;
+}
+.open {
+  display: flex !important;
 }
 
 /*header*/
@@ -181,7 +257,40 @@ body {
 .main {
   margin: 100px 0px 0px 0px;
   flex: 1 1 auto;
+  padding: 0px 10px;
 }
+
+.main-page {
+  // .main-page__content
+
+  &__content {
+    max-width: 521px;
+    text-align: justify;
+    margin: 0 auto 10px auto;
+    p {
+      font-size: 20px;
+      line-height: 27px;
+      margin-bottom: 50px;
+      :last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  &__button {
+    background-color: var(--black);
+    border-radius: 9px;
+    color: var(--white);
+    text-transform: uppercase;
+    display: flex;
+    max-width: 290px;
+    font-weight: 700;
+    padding: 11px 88px;
+    justify-content: center;
+    align-items: center;
+    align-self: start;
+  }
+}
+
 /*main*/
 
 /*services*/

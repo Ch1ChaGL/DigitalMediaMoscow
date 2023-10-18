@@ -9,28 +9,73 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <nav class="navbar">
-          <div class="navbar__row">
-            <div class="navbar__logo"><a href="#">Digital Media Moscow</a></div>
-            <ul class="navbar__items">
-              <li><a href="#">Услуги</a></li>
-              <li><a href="#">Агенство</a></li>
-              <li><a href="#">Люди</a></li>
-              <li><a href="#">Связаться</a></li>
-            </ul>
-            <div class="navbar__contacts contacts">
-              <div class="contacts__telegram">
-                <a href="#"><img src="./img/telegram.png" alt="telegram" /></a>
-              </div>
-              <div class="contacts__instagram">
-                <a href="#"><img src="./img/inst.png" alt="instagram" /></a>
+        <div class="header__row">
+          <nav class="header__menu menu">
+            <div class="menu__logo">
+              <a href="index.html">Digital Media Moscow</a>
+            </div>
+            <div class="menu__body">
+              <ul class="menu__list">
+                <li class="hidden" id="menu__link-container">
+                  <a href="index.html" id="menu__link-main" class="hidden menu__link"
+                    >Главная</a
+                  >
+                </li>
+                <li>
+                  <a href="#beans-category" class="menu__link">Услуги</a>
+                </li>
+                <li>
+                  <a href="#ground-category" class="menu__link">Агенство</a>
+                </li>
+                <li>
+                  <a href="#capsules-category" class="menu__link">Люди</a>
+                </li>
+                <li>
+                  <a href="#souvenirs-category" class="menu__link">Связаться</a>
+                </li>
+              </ul>
+              <div class="menu__contacts">
+                <a href="#"><img src="./img/telegram.png" /></a>
+                <a href="#"><img src="./img/inst.png" /></a>
               </div>
             </div>
-          </div>
-        </nav>
+            <div class="menu__burger">
+              <span></span>
+            </div>
+          </nav>
+        </div>
       </header>
-      <main class="main">2</main>
-      <footer class="footer">123</footer>
+      <main class="main">
+        <div class="container">
+          <div class="main-page__content">
+            <p>
+              <b>Digital Media Moscow</b> — рекламное-агентство, в котором
+              работают люди любящие создавать эффективные коммуникационные
+              кампании.
+            </p>
+            <p>
+              <b>Мы объединяем</b> наши таланты и опыт, чтобы помогать нашим
+              клиентам добиться выдающихся результатов и увеличить их
+              присутствие в онлайн-мире. Мы отлично понимаем, что для достижения
+              успеха в современном мире необходимо инновационное мышление и
+              креативный подход.
+            </p>
+            <p>
+              <b>Мы верим</b>
+              в силу эффективной коммуникации и умения создавать впечатляющие и
+              целенаправленные кампании, которые привлекут внимание аудитории и
+              поддержат рост бизнеса наших клиентов.
+            </p>
+            <p>
+              <b>Мы обещаем</b>
+              сэкономить ваше время, деньги и энергию, помогая вам осуществить
+              ваши цели.
+            </p>
+            <div class="main-page__button">Связаться</div>
+          </div>
+        </div>
+      </main>
     </div>
+    <script src="./js/burger.js"></script>
   </body>
 </html>
