@@ -39,3 +39,15 @@ function enableScroll() {
   document.documentElement.style.overflow = "";
   document.body.style.overflow = "";
 }
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 600) {
+    document.querySelector(".menu__body").classList.remove("open");
+    burger.classList.remove("active");
+    const menuLinkMain = document.getElementById("menu__link-main");
+    menuLinkMain.classList.add("hidden");
+
+    const menuLinkContainer = document.getElementById("menu__link-container");
+    menuLinkContainer.classList.add("hidden");
+  }
+});
