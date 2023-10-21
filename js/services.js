@@ -59,6 +59,7 @@ const createBlock = (dataName, element, title) => {
 
 const openList = e => {
   const closestLi = e.target.closest('li');
+  if(!closestLi) return;
   const block = closestLi?.querySelector('.services-page__block');
   if (block) return;
   const span = closestLi?.querySelector('span');
