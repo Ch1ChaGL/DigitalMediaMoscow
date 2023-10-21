@@ -1,4 +1,4 @@
-export const data = [
+const servicesPageData = [
   {
     name: 'PromotionDevelopment',
     value: [
