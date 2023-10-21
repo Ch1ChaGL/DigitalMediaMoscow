@@ -1,5 +1,5 @@
 /* Обнуление */
-@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@700&family=Manrope:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@700&family=Manrope:wght@400;700&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -97,7 +97,7 @@ h6 {
   --white: #fff;
 }
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 .container {
   max-width: 800px;
@@ -148,7 +148,7 @@ body {
     margin: 0px 40px 0px 0px;
     a {
       color: var(--black);
-      font-family: "Azeret Mono", monospace;
+      font-family: 'Azeret Mono', monospace;
       font-weight: 700;
       font-size: 20px;
       font-size: 20px;
@@ -187,7 +187,7 @@ body {
   &__burger {
     display: none;
     position: relative;
-    z-index: 999;
+    z-index: 999 !important;
     align-items: center;
     justify-content: flex-end;
     width: 30px;
@@ -200,7 +200,7 @@ body {
     }
     &::after,
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       height: 2px;
       width: 100%;
@@ -245,12 +245,11 @@ body {
       display: none;
       flex-direction: column;
       position: fixed;
+      z-index: 999;
       height: 100%;
       width: 100%;
       top: 0;
       left: 0;
-      z-index: 999;
-
       padding: 50px 40px;
       background-color: var(--white);
     }
@@ -270,6 +269,7 @@ body {
 #menu__link-main.hidden {
   display: none !important;
 }
+
 .open {
   display: flex !important;
 }
@@ -328,6 +328,11 @@ body {
       font-size: 20px;
       margin: 0px 0px 30px 0px;
       cursor: pointer;
+      &.active {
+        span {
+          border-bottom: 1px solid #000;
+        }
+      }
     }
   }
 
@@ -348,9 +353,15 @@ body {
 }
 .block {
   margin-top: 30px;
+  transition: all ease 0.3s;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   // .block__tittle
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__tittle {
     font-weight: 700;
     font-size: 20px;
@@ -372,7 +383,44 @@ body {
   &__button {
   }
 }
-.button {
+.block:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.close-button {
+  cursor: pointer;
+  position: relative;
+  z-index: 1 !important;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.close-button::before,
+.close-button::after {
+  content: ''; /* Обязательное свойство для псевдоэлемента */
+  position: absolute;
+  z-index: 0;
+  transition: all 0.3s ease;
+  top: 20px;
+  left: 20px;
+  width: 40px; /* Ширина иконки */
+  height: 2px; /* Толщина линии */
+  background-color: var(--grey); /* Цвет иконки */
+}
+.close-button::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-button::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close-button:hover::before,
+.close-button:hover::after {
+  background-color: #868484; /* Изменение цвета при наведении */
 }
 
 /*services*/

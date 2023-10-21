@@ -225,7 +225,7 @@ body {
 .menu__burger {
   display: none;
   position: relative;
-  z-index: 999;
+  z-index: 999 !important;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -296,11 +296,11 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     position: fixed;
+    z-index: 999;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 999;
     padding: 50px 40px;
     background-color: var(--white);
   }
@@ -375,6 +375,9 @@ body {
   margin: 0px 0px 30px 0px;
   cursor: pointer;
 }
+.services-page__list li.active span {
+  border-bottom: 1px solid #000;
+}
 .services-page__button {
   margin: 50px 0px 30px 0px;
 }
@@ -388,8 +391,21 @@ body {
 
 .block {
   margin-top: 30px;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.block__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .block__tittle {
   font-weight: 700;
@@ -403,6 +419,52 @@ body {
   margin: 0px 0px 30px 0px;
   line-height: 27px;
 }
+.block:hover {
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.close-button {
+  cursor: pointer;
+  position: relative;
+  z-index: 1 !important;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.close-button::before,
+.close-button::after {
+  content: ""; /* Обязательное свойство для псевдоэлемента */
+  position: absolute;
+  z-index: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  top: 20px;
+  left: 20px;
+  width: 40px; /* Ширина иконки */
+  height: 2px; /* Толщина линии */
+  background-color: var(--grey); /* Цвет иконки */
+}
+
+.close-button::before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-button::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close-button:hover::before,
+.close-button:hover::after {
+  background-color: #868484; /* Изменение цвета при наведении */
+}
+
 /*services*/
 /*agency*/
 /*agency*/
