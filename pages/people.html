@@ -8,11 +8,24 @@
   </head>
   <body>
     <div class="wrapper">
+      <div id="modal-container" class="modal-container">
+        <form id="modal" class="modal" action="/mail.php">
+          <input type="text" placeholder="Имя" class="modal__name" />
+          <input type="email" placeholder="E-mail" class="modal__email" />
+          <textarea
+            cols="30"
+            rows="10"
+            placeholder="Напишите нам"
+            class="modal__text"
+          ></textarea>
+          <button class="modal__submit" type="submit">Отправить</button>
+        </form>
+      </div>
       <header class="header">
         <div class="header__row">
           <nav class="header__menu menu">
             <div class="menu__logo">
-              <a href="index.html">Digital Media Moscow</a>
+              <a href="/index.html">Digital Media Moscow</a>
             </div>
             <div class="menu__body">
               <ul class="menu__list">
@@ -26,7 +39,7 @@
                   <a href="/pages/people.html" class="menu__link">Люди</a>
                 </li>
                 <li>
-                  <a href="#souvenirs-category" class="menu__link">Связаться</a>
+                  <div class="menu__link" id="contact">Связаться</div>
                 </li>
               </ul>
               <div class="menu__contacts">
@@ -51,11 +64,11 @@
       <main class="main">
         <section class="gallery">
           <div class="gallery__items">
-            <div class="gallery__item">
-              <img src="/img/people/01.JPG" alt="" />
+            <div class="gallery__item gallery__item_medium">
+              <img src="/img/people/03.JPG" alt="" />
               <div class="text">
-                <p>Балакир Сергей</p>
-                <p>Продюсер медиа-проектов</p>
+                <p>Марков Данил</p>
+                <p>Web-разработчик</p>
               </div>
             </div>
             <div class="gallery__item">
@@ -65,18 +78,19 @@
                 <p>Web-разработчик</p>
               </div>
             </div>
-            <div class="gallery__item">
-              <img src="/img/people/03.JPG" alt="" />
+            <div class="gallery__item gallery__item_medium">
+              <img src="/img/people/01.JPG" alt="" />
               <div class="text">
-                <p>Марков Данил</p>
-                <p>Web-разработчик</p>
+                <p>Балакир Сергей</p>
+                <p>Продюсер медиа-проектов</p>
               </div>
             </div>
-            <div class="gallery__item">
-              <img src="/img/people/04.JPG" alt="" />
+            <div class="gallery__item gallery__item_medium">
+              <img src="/img/people/06.JPG" alt="" />
               <div class="text">
-                <p>Корнилов Владислав</p>
-                <p>Маркетолог</p>
+                <p>Сафронова Ксения</p>
+                <p>Сооснователь агенства Digital Media Moscow,</p>
+                <p>продюсер, креатив-менеджер</p>
               </div>
             </div>
             <div class="gallery__item">
@@ -86,19 +100,18 @@
                 <p>Таргетолог</p>
               </div>
             </div>
-            <div class="gallery__item">
-              <img src="/img/people/06.JPG" alt="" />
-              <div class="text">
-                <p>Сафронова Ксения</p>
-                <p>Сооснователь агенства Digital Media Moscow,</p>
-                <p>продюсер, креатив-менеджер</p>
-              </div>
-            </div>
-            <div class="gallery__item">
+            <div class="gallery__item gallery__item_medium">
               <img src="/img/people/07.JPG" alt="" />
               <div class="text">
                 <p>Сафронова Милена</p>
                 <p>Smm-специалист, дизайнер</p>
+              </div>
+            </div>
+            <div class="gallery__item gallery__item_medium">
+              <img src="/img/people/04.JPG" alt="" />
+              <div class="text">
+                <p>Корнилов Владислав</p>
+                <p>Маркетолог</p>
               </div>
             </div>
             <div class="gallery__item">
@@ -141,7 +154,7 @@
             <li>Делает правильные вещи</li>
             <li>Ищет отличия</li>
           </ol>
-          <div class="people-page__button button">Связаться</div>
+          <div class="people-page__button button" id="contact">Связаться</div>
         </div>
         <!-- </div> -->
       </main>

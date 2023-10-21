@@ -8,6 +8,19 @@
   </head>
   <body>
     <div class="wrapper">
+      <div id="modal-container" class="modal-container">
+        <form id="modal" class="modal" action="/mail.php">
+          <input type="text" placeholder="Имя" class="modal__name" />
+          <input type="email" placeholder="E-mail" class="modal__email" />
+          <textarea
+            cols="30"
+            rows="10"
+            placeholder="Напишите нам"
+            class="modal__text"
+          ></textarea>
+          <button class="modal__submit" type="submit">Отправить</button>
+        </form>
+      </div>
       <header class="header">
         <div class="header__row">
           <nav class="header__menu menu">
@@ -26,7 +39,7 @@
                   <a href="/pages/people.html" class="menu__link">Люди</a>
                 </li>
                 <li>
-                  <a href="#souvenirs-category" class="menu__link">Связаться</a>
+                  <div class="menu__link" id="contact">Связаться</div>
                 </li>
               </ul>
               <div class="menu__contacts">
@@ -86,7 +99,9 @@
                 <span>Настройка и ведение контекстной рекламы</span>
               </li>
             </ul>
-            <div class="services-page__button button">Связаться</div>
+            <div class="services-page__button button" id="contact">
+              Связаться
+            </div>
           </div>
         </div>
       </main>

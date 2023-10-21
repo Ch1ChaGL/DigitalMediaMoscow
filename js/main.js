@@ -1,4 +1,13 @@
 'use strict';
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('modal');
+
+  form.addEventListener('submit', formSend);
+  function formSend(e) {
+    //e.preventDefault();
+    closeModal();
+  }
+});
 
 //burger
 const burger = document.querySelector('.menu__burger');
@@ -76,3 +85,36 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //navbar-links
+
+//contact
+
+const contactBtn = document.querySelectorAll('#contact');
+for (const btn of contactBtn) {
+  //btn.addEventListener('click', showContactPage);
+  btn.addEventListener('click', openModal);
+}
+//contact
+
+const modalContainer = document.getElementById('modal-container');
+const modal = document.getElementById('modal');
+const closeButton = document.getElementById('modal-close-button');
+
+// Функция для открытия модального окна
+function openModal() {
+  modalContainer.style.display = 'flex';
+}
+
+// Функция для закрытия модального окна
+function closeModal() {
+  modalContainer.style.display = 'none';
+}
+
+// Обработчик события для закрытия модального окна
+closeButton?.addEventListener('click', closeModal);
+
+// Закрыть модальное окно, если пользователь кликнет вне окна
+modalContainer.addEventListener('click', event => {
+  if (event.target === modalContainer) {
+    closeModal();
+  }
+});

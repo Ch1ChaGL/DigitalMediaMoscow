@@ -33,6 +33,7 @@ const createBlock = (dataName, element, title) => {
   block__text.classList.add('block__text');
 
   const block__button = document.createElement('div');
+  block__button.addEventListener('click', openModal);
   block__button.textContent = 'Связаться';
   block__button.classList.add('block__button');
   block__button.classList.add('button');
@@ -59,7 +60,7 @@ const createBlock = (dataName, element, title) => {
 
 const openList = e => {
   const closestLi = e.target.closest('li');
-  if(!closestLi) return;
+  if (!closestLi) return;
   const block = closestLi?.querySelector('.services-page__block');
   if (block) return;
   const span = closestLi?.querySelector('span');
@@ -72,6 +73,5 @@ const openList = e => {
 };
 
 for (const service of list.children) {
-  console.log(service);
   service.addEventListener('click', openList);
 }

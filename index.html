@@ -8,6 +8,30 @@
   </head>
   <body>
     <div class="wrapper">
+      <div id="modal-container" class="modal-container">
+        <form id="modal" class="modal" method="post" action="/mail.php">
+          <input
+            type="text"
+            placeholder="Имя"
+            class="modal__name"
+            name="user_name"
+          />
+          <input
+            type="email"
+            placeholder="E-mail"
+            class="modal__email"
+            name="user_email"
+          />
+          <textarea
+            name="user_text"
+            cols="30"
+            rows="10"
+            placeholder="Напишите нам"
+            class="modal__text"
+          ></textarea>
+          <button class="modal__submit" type="submit">Отправить</button>
+        </form>
+      </div>
       <header class="header">
         <div class="header__row">
           <nav class="header__menu menu">
@@ -26,7 +50,7 @@
                   <a href="/pages/people.html" class="menu__link">Люди</a>
                 </li>
                 <li>
-                  <a href="#souvenirs-category" class="menu__link">Связаться</a>
+                  <div class="menu__link" id="contact">Связаться</div>
                 </li>
               </ul>
               <div class="menu__contacts">
@@ -74,7 +98,7 @@
               сэкономить ваше время, деньги и энергию, помогая вам осуществить
               ваши цели.
             </p>
-            <div class="main-page__button button">Связаться</div>
+            <div class="main-page__button button" id="contact">Связаться</div>
           </div>
         </div>
       </main>
